@@ -68,13 +68,13 @@ bool BunkerBaseRos::Initialize() {
       if (proto == ProtocolVersion::AGX_V1) {
         std::cout << "Detected protocol: AGX_V1" << std::endl;
         robot_ = std::unique_ptr<BunkerRobot>(
-        new BunkerRobot(ProtocolVersion::AGX_V1));
+        new BunkerRobot(BunkerRobot::Variant::kBunkerV1));
       }
       else if (proto == ProtocolVersion::AGX_V2)
       {
         std::cout << "Detected protocol: AGX_V2" << std::endl;
         robot_ = std::unique_ptr<BunkerRobot>(
-        new BunkerRobot(ProtocolVersion::AGX_V2));
+        new BunkerRobot(BunkerRobot::Variant::kBunkerV2));
       }else {
       std::cout << "Detected protocol: UNKONWN" << std::endl;
       return false;
